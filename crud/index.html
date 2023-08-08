@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CRUD Operation">
+    <link rel="icon" href="../img/favicon.png">
+    <title>CRUD</title>
+    <!-- LINK - MAIN Fonts  -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Mochiy+Pop+One&display=swap"
+        rel="stylesheet"> <!-- LINK - MAIN FontAwesome - FILE  -->
+    <link rel="stylesheet" href="../css/all.min.css">
+    <!-- LINK - MAIN CSS-SweetAlert - FILE -->
+    <link rel="stylesheet" href="../css/sweetalert2.min.css">
+    <!-- LINK - MAIN BOOTSTRAP - FILE -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- LINK - MAIN CSS - FILE -->
+    <link rel="stylesheet" href="../css/crudstyle.css">
+</head>
+
+<body>
+    <div id="loadingScreen" class="d-none">
+        <div class="loader">
+            <div class="box box-1">
+                <div class="side-left"></div>
+                <div class="side-right"></div>
+                <div class="side-top"></div>
+            </div>
+            <div class="box box-2">
+                <div class="side-left"></div>
+                <div class="side-right"></div>
+                <div class="side-top"></div>
+            </div>
+            <div class="box box-3">
+                <div class="side-left"></div>
+                <div class="side-right"></div>
+                <div class="side-top"></div>
+            </div>
+            <div class="box box-4">
+                <div class="side-left"></div>
+                <div class="side-right"></div>
+                <div class="side-top"></div>
+            </div>
+        </div>
+    </div>
+    <div class="vh-100 mainSection visible justify-content-center align-items-center">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black bg-opacity-50">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="../img/favicon.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto ">
+                        <li class="nav-item me-5">
+                            <a class="nav-link active text-secondary" aria-current="page" href="#" id="Email">
+                            </a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center">
+                            <button class="btn text-white btn-sm" title="Log Out" id="logOut"> 
+                                <i class="fa-solid fa-2x fa-arrow-right-from-bracket"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class=" mt-5 d-flex  flex-column justify-content-center align-items-center">
+            <div class="container  mt-5 text-center rounded-1  py-4">
+                <h1 class="fw-bolder text-uppercase">CRUD Operation</h1>
+                <div class="row ">
+                    <div class="col-md-6 mb-4 text-start rounded-3">
+                        <label for="productName" class="mb-2 fw-bold">Product Name</label>
+                        <input type="text" name="productName" class="form-control bg-black bg-opacity-50 text-white"
+                            oninput="pManger.validation()" id="productName">
+                    </div>
+                    <div class="col-md-6 mb-4 text-start rounded-3">
+                        <label for="productPrice" class="mb-2 fw-bold">Product Price</label>
+                        <input type="number" name="productPrice" class="form-control bg-black bg-opacity-50 text-white"
+                            oninput="pManger.validation()" id="productPrice">
+                    </div>
+                    <div class="col-md-12 mb-4 text-start rounded-3">
+                        <label for="productCat" class="mb-2 fw-bold">Product Category</label>
+                        <select name="productCat" class="form-select bg-black bg-opacity-50 text-white" id="productCat"
+                            oninput="pManger.validation()">
+                            <option disabled selected value="Select Category"> Select Category</option>
+                            <optgroup label="Iphone" class="fw-bold text-uppercase">
+                                <option value="12 pro max" class="fw-bold text-uppercase"> 12 pro max </option>
+                                <option value="12 Pro" class="fw-bold text-uppercase"> 12 Pro </option>
+                            </optgroup>
+                            <optgroup label="Samsung" class="fw-bold text-uppercase">
+                                <option value="S1"> S1 </option>
+                                <option value="S2"> S2 </option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="col-md-12 mb-4 text-start rounded-3">
+                        <label for="productDesc" class="mb-2  fw-bold">Product Description</label>
+                        <textarea name="productDesc" id="productDesc" style="resize: none;"
+                            oninput="pManger.validation()" rows="3"
+                            class="form-control bg-black bg-opacity-50 text-white"></textarea>
+                    </div>
+                </div>
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-md-6">
+                        <div class="search mb-5 text-start fs-5">
+                            <label for="search" class="mb-2 fw-bold text-crimson">Search</label>
+                            <input type="text" class="form-control mb-2 bg-black bg-opacity-50 text-white" id="search"
+                                placeholder="Search for products" oninput="pManger.searchProducts(this.value)">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end mt-5 col-md-6 Btns ">
+                        <div class="" title="Add Product" id="addBtn">
+                            <button type="submit" class="btn btn-all btnNum1 rounded-circle fw-bold text-uppercase py-2"
+                                onclick="pManger.addProducts()">
+                                <i class="fa-solid  fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class=" d-none text-nowrap" title="Update Product" id="updateBtn">
+                            <button type="submit" class="btn btn-all btnNum2 rounded-circle fw-bold text-uppercase py-2"
+                                onclick="pManger.pushUpdateValue()">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </button>
+                        </div>
+                        <div class=" text-nowrap" title="Delete Selected Product">
+                            <button type="submit"
+                                class="btn btn-all btnNum3  rounded-circle fw-bold text-uppercase py-2 disabled"
+                                id="delSelectBtn" onclick="pManger.delSelectedProducts()">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                        <div class="" title="Delete All Product">
+                            <button type="submit" class="btn btn-all btnNum4 rounded-circle fw-bold text-uppercase py-2"
+                                onclick="pManger.dellAllProducts()">
+                                <i class="fa-solid fa-eraser"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-sm-4 table-row mt-md-0 ">
+                    <div class="col-md-12 table-responsive">
+                        <table class="table table-striped w-100 ">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Index</th>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Product Price</th>
+                                    <th scope="col">Product Category</th>
+                                    <th scope="col">Product Description</th>
+                                    <th scope="col">Last Update</th>
+                                    <th scope="col">Update</th>
+                                    <th scope="col">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SCRIPT - MAIN JS - FILE -->
+    <script src="../Js/sweetalert2.all.min.js"></script>
+    <script src="../Js/moment.js"></script>
+    <script src="../Js/bootstrap.min.js"></script>
+    <script src="../Js/crudmain.js"></script>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login System">
+    <link rel="icon" href="img/favicon.png">
+    <title>LoginSys</title>
+    <!-- LINK - MAIN Fonts  -->
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Josefin+Sans:wght@600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- LINK - MAIN CSS-SweetAlert - FILE -->
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <!-- LINK - MAIN BOOTSTRAP - FILE -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- LINK - MAIN CSS - FILE -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="d-flex justify-content-center align-items-center">
+    <div id="loadingScreen" class="d-none">
+        <div class="loader">
+            <div class="box box-1">
+                <div class="side-left"></div>
+                <div class="side-right"></div>
+                <div class="side-top"></div>
+            </div>
+            <div class="box box-2">
+                <div class="side-left"></div>
+                <div class="side-right"></div>
+                <div class="side-top"></div>
+            </div>
+            <div class="box box-3">
+                <div class="side-left"></div>
+                <div class="side-right"></div>
+                <div class="side-top"></div>
+            </div>
+            <div class="box box-4">
+                <div class="side-left"></div>
+                <div class="side-right"></div>
+                <div class="side-top"></div>
+            </div>
+        </div>
+    </div>
+    <section class="mainSection text-white w-75 d-flex justify-content-end">
+        <div class="w-100 bg-black wall">
+            <div class="homeBanner">
+                <img src="img/animated.gif" class="img-fluid w-100" alt="">
+            </div>
+        </div>
+        <div class="container w-50 text-center d-flex flex-column loginWrapper ms-auto justify-content-center align-items-center position-relative">
+            <div class="row w-75 mainMoveSignIn transition-Delay" id="signInForm">
+                <div class="col-12">
+                    <div class="login">
+                        <form method="post" id="loginMainForm">
+                            <h1 class="text-uppercase fw-bold mb-4">Login</h1>
+                            <div class="form-group mb-4">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control bg-transparent text-white" id="email"
+                                        placeholder="">
+                                    <label for="email">Email</label>
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control bg-transparent text-white" id="password"
+                                        placeholder="">
+                                    <label for="password">Password</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary w-100 me-3" id="loginBtn">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="position-absolute bottom-0 start-50 w-50 translate-middle-x py-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#" class="
+                        text-white 
+                        text-decoration-none 
+                        btn btn-success  w-100" id="signUp">
+                            SignUp
+                        </a>
+                    </div>
+                    <div class="col-md-12">
+                        <a href="#" class="
+                        text-white 
+                        text-decoration-none 
+                        btn btn-primary  w-100 d-none" id="backToSignIn">
+                            SignIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row w-75 mainMoveSignUp transition-Delay" id="signUpForm">
+                <div class="col-12">
+                    <div class="signup">
+                        <h1 class="text-uppercase fw-bold mb-4">Signup</h1>
+                        <div class="form-group mb-4">
+                            <div class="form-floating">
+                                <input type="text" class="form-control bg-transparent text-white" id="signUpName"
+                                    placeholder="">
+                                <label for="signUpName">Name</label>
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <div class="form-floating">
+                                <input type="email" class="form-control bg-transparent text-white" id="signUpEmail"
+                                    placeholder="">
+                                <label for="signUpEmail">Email</label>
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <div class="form-floating">
+                                <input type="password" class="form-control bg-transparent text-white"
+                                    id="signUpPassword" placeholder="">
+                                <label for="signUpPassword">Password</label>
+                            </div>
+                            <ul class="text-danger mb-4 list-unstyled text-start d-none" id="wrongValues">
+                                <li class="text-danger">
+                                    <i class="fas fa-exclamation-triangle"></i>  at least 8 characters
+                                </li>
+                                <li class="text-danger">
+                                    <i class="fas fa-exclamation-triangle"></i>  Can contain special characters
+                                </li>
+                                <li class="text-danger">
+                                    <i class="fas fa-exclamation-triangle"></i>  must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success w-100 me-3" id="signUpFormBtn">Signup</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<!-- SCRIPT - MAIN JS - FILE -->
+<script src="Js/sweetalert2.all.min.js"></script>
+<script src="Js/moment.js"></script>
+<script src="Js/bootstrap.min.js"></script>
+<script src="Js/main.js"></script>
+</html>
