@@ -246,7 +246,7 @@ function showLoadingScreen() {
         }, 3000);
     }else{
         setTimeout(function () {
-            window.location.replace("/curd");
+            window.location.replace("../crud");
         }, 3000);
     }
 }
