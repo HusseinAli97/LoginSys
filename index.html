@@ -18,6 +18,16 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- LINK - MAIN CSS - FILE -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px rgb(70, 6, 72) inset !important;
+            -webkit-text-fill-color: rgb(246, 246, 246) !important;
+
+        }
+    </style>
 </head>
 
 <body class="d-flex justify-content-center align-items-center">
@@ -51,7 +61,8 @@
                 <img src="img/animated.gif" class="img-fluid w-100" alt="">
             </div>
         </div>
-        <div class="container w-50 text-center d-flex flex-column loginWrapper ms-auto justify-content-center align-items-center position-relative">
+        <div
+            class="container w-50 text-center d-flex flex-column loginWrapper ms-auto justify-content-center align-items-center position-relative">
             <div class="row w-75 mainMoveSignIn transition-Delay" id="signInForm">
                 <div class="col-12">
                     <div class="login">
@@ -124,15 +135,16 @@
                             </div>
                             <ul class="text-danger mb-4 list-unstyled text-start d-none" id="wrongValues">
                                 <li class="text-danger">
-                                    <i class="fas fa-exclamation-triangle"></i>  at least 8 characters
+                                    <i class="fas fa-exclamation-triangle"></i> at least 8 characters
                                 </li>
                                 <li class="text-danger">
-                                    <i class="fas fa-exclamation-triangle"></i>  Can contain special characters
+                                    <i class="fas fa-exclamation-triangle"></i> Can contain special characters
                                 </li>
                                 <li class="text-danger">
-                                    <i class="fas fa-exclamation-triangle"></i>  must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number
+                                    <i class="fas fa-exclamation-triangle"></i> must contain at least 1 uppercase
+                                    letter, 1 lowercase letter, and 1 number
                                 </li>
-                                
+
                             </ul>
                         </div>
                         <div class="form-group">
@@ -149,4 +161,5 @@
 <script src="Js/moment.js"></script>
 <script src="Js/bootstrap.min.js"></script>
 <script src="Js/main.js"></script>
+
 </html>
